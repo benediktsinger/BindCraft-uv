@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bindcraft"
+version = "0.1.0"
+description = "A toolkit for protein binding design and analysis"
+readme = "README.md"
+authors = [
+    {name = "BindCraft Team"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "pandas",
+    "matplotlib",
+    "numpy<2.0.0",
+    "biopython",
+    "scipy",
+    "seaborn",
+    "tqdm",
+    "jupyter",
+    "ffmpeg",
+    "fsspec",
+    "py3dmol",
+    "chex",
+    "dm-haiku",
+    "flax<0.10.0",
+    "dm-tree",
+    "joblib",
+    "ml-collections",
+    "immutabledict",
+    "optax",
+    "jaxlib",
+    "jax",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black",
+    "isort",
+    "mypy",
+    "flake8",
+]
+
+[tool.setuptools]
+packages = ["bindcraft"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
