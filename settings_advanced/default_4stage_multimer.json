@@ -15,7 +15,7 @@
     "hard_iterations": 5,
     "greedy_iterations": 15,
     "greedy_percentage": 5,
-    "save_design_animations": true,
+    "save_design_animations": false,
     "save_design_trajectory_plots": true,
     "weights_plddt": 0.1,
     "weights_pae_intra": 0.4,
